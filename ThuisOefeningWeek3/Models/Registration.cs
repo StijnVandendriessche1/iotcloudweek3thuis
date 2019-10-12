@@ -13,7 +13,7 @@ namespace ThuisOefeningWeek3
         public int Age { get; set; }
         public string Email { get; set; }
         public bool IsFirstTimer { get; set; }
-        public string RegistrationId { get; internal set; }
+        public string RegistrationId { get; set; }
     }
 
 }

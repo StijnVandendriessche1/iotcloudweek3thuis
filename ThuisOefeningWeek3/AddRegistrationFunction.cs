@@ -15,7 +15,7 @@ namespace ThuisOefeningWeek3
     {
         [FunctionName("AddRegistration")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "/registrations")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "registrations")] HttpRequest req,
             ILogger log)
         {
             try
@@ -48,7 +48,7 @@ namespace ThuisOefeningWeek3
                         cmd.Connection = con;
 
                         //Het effectieve commando (@xxx voor parameterisering)
-                        cmd.CommandText = "instert into tblRegistraties values @RegistrationId, @LastName, @FirstName, @Email, @Zipcode, @Age, @isFirstTimer";
+                        cmd.CommandText = "insert into tblRegistraties values (@RegistrationId, @LastName, @FirstName, @Email, @Zipcode, @Age, @isFirstTimer)";
 
                         //parameters gaan toevoegen
                         cmd.Parameters.AddWithValue("@RegistrationId", reg.RegistrationId);
